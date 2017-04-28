@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    </head>
+<body>
+    <div class="pantalla-inicio">
+    <h1>COLOR<b>TAP</b></h1>
+    <p>Toca "comenzar" para la diversión</p>
+    <button onclick="navegar('juego.html')">COMENZAR</button>
+    <p id="bonita"></p>
+        </div>
+        
+        
+    </body>
+<script>
+    function navegar(liga){
+        //REDIRIGIR A LIGA (juego,html)
+        window.location.assign(liga);
+    }
+    var frase=new Array(
+        "Te amo Sara",
+        "Este es tu juego amor",
+        "Sara es mia",
+        "Yo soy de Sara",
+        "Podran haber miles de rosas, pero Sara es la mia", 
+        "Everyday is valentine's day with you honey"
+
+    );
+    function rotarFrase()
+    {
+        // obtenemos un numero aleatorio entre 0 y la cantidad de frases que hay
+        var index=Math.floor((Math.random()*frase.length));
+ 
+        // cambiamos la frase
+        document.getElementById("bonita").innerHTML = frase[index];
+    }
+    onload=function()
+    {
+        
+        rotarFrase();
+        setInterval(rotarFrase,5000);
+    }
+    </script>
+
+    
+    
+</html>
